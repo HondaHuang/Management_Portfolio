@@ -40,7 +40,6 @@ public class Project {
 	@Temporal(TemporalType.DATE)
 	private Date end;
 	@Column
-	@Min(1)
 	private int duration;
 	@Column
 	@Size(min=2,max=30)

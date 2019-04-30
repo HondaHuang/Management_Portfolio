@@ -66,6 +66,12 @@ public class Management_Portfolio_Controller {
 		}
 		return p;
 	}
+	
+	@PutMapping("/portfolioproject")
+	public Portfolio createProject(@RequestBody Portfolio portfolio) throws CustomException {
+		projectService.create(portfolio.getProjects().get(portfolio.getProjects().size()-1));
+		return portfolioService.create(portfolio);
+	}
 
 	@PutMapping("/portfolio")
 	public Portfolio updatePortfolio(@RequestBody Portfolio portfolio) throws CustomException {
@@ -100,14 +106,15 @@ public class Management_Portfolio_Controller {
 		return true;
 	}
 
-	@PostMapping("/project")
+/*	@PostMapping("/project")
 	public Project createProject(@RequestBody Project project) throws CustomException {
 		Project p = projectService.create(project);
+		
 		if (p == null) {
 			throw new CustomException("Unable to create project with ID: " + project.getId());
 		}
 		return p;
-	}
+	}*/
 
 	@PutMapping("/project")
 	public Project updateProject(@RequestBody Project project) throws CustomException {
