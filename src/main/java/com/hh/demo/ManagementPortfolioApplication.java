@@ -51,8 +51,19 @@ public class ManagementPortfolioApplication implements CommandLineRunner{
 		consultantDAO.save(new Consultant("Mike", "Engineer", 2));
 		consultantDAO.save(new Consultant("Derek", "Engineer", 3));
 		consultantDAO.save(new Consultant("Honda", "Engineer", 1));
+		consultantDAO.save(new Consultant("Aaron", "Tester", 4));
+		consultantDAO.save(new Consultant("Joseph", "DevOps", 5));
+		consultantDAO.save(new Consultant("Kelly", "UI Design", 6));
+		consultantDAO.save(new Consultant("Randy", "DBA", 7));
+		consultantDAO.save(new Consultant("Larry", "Analyst", 8));
 		pocDAO.save(new ClientPOC("Hasib", "Hasib@aol.com"));
 		pocDAO.save(new ClientPOC("Chang", "Chang@aol.com"));
+		pocDAO.save(new ClientPOC("Tom", "Tom@gmail.com"));
+		pocDAO.save(new ClientPOC("Rick", "Rick@yahoo.com"));
+		pocDAO.save(new ClientPOC("Frank", "Frank@aol.com"));
+		pocDAO.save(new ClientPOC("Patrick", "Patrick@hotmail.com"));
+		pocDAO.save(new ClientPOC("Amanda", "Amanda@aol.com"));
+		pocDAO.save(new ClientPOC("Charlie", "Charlie@mphasis.com"));
 		
 		////////////
 		// since you need to add lists of people into project, those need to be made first
@@ -119,7 +130,7 @@ public class ManagementPortfolioApplication implements CommandLineRunner{
 		//dummy portfolio
 		/////////
 		portfolioService.create(new Portfolio(
-				"Bobby",
+				"Delivery",
 				12345.67, 
 				"Vinay", 
 				projectList

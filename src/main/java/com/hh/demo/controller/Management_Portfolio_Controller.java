@@ -75,13 +75,7 @@ public class Management_Portfolio_Controller {
 
 	@PutMapping("/portfolio")
 	public Portfolio updatePortfolio(@RequestBody Portfolio portfolio) throws CustomException {
-		Optional<Portfolio> preupdate = portfolioService.get(portfolio.getId());
-		portfolio = portfolioService.create(portfolio);
-		Optional<Portfolio> postupdate = portfolioService.get(portfolio.getId());
-		if (preupdate.equals(postupdate)) {
-			throw new CustomException("Unable to update portfolio with ID: " + portfolio.getId());
-		}
-		return portfolio;
+		return portfolioService.create(portfolio);
 	}
 
 	/*********************************************************************************************/
@@ -118,13 +112,7 @@ public class Management_Portfolio_Controller {
 
 	@PutMapping("/project")
 	public Project updateProject(@RequestBody Project project) throws CustomException {
-		Project preupdate = projectService.get(project.getId());
-		project = projectService.create(project);
-		Project postupdate = projectService.get(project.getId());
-		if (preupdate.equals(postupdate)) {
-			throw new CustomException("Unable to update project with ID: " + project.getId());
-		}
-		return project;
+		return projectService.create(project);
 	}
 
 	/*********************************************************************************************

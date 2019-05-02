@@ -28,10 +28,8 @@ public class Project {
 	@Column
 	private Integer id;
 	@Column
-	@Size(min=2,max=30)
 	private String name;
 	@Column
-	@Size(min=2,max=30)
 	private String type;
 	@Column
 	@Temporal(TemporalType.DATE)
@@ -42,25 +40,18 @@ public class Project {
 	@Column
 	private int duration;
 	@Column
-	@Size(min=2,max=30)
 	private String status;
 	@Column
-	@Size(min=2,max=30)
 	private String methodology;
 	@Column
-	@Size(min=3,max=100)
 	private String description;
 	@Column
-	@Size(min=2,max=30)
 	private String tools;
 	@Column
-	@Size(min=2,max=30)
 	private String pm;
 	@Column
-	@Size(min=2,max=30)
 	private String dm;
 	@Column
-	@Size(min=2,max=30)
 	private String client;
 	@Column
 	private double budget;
