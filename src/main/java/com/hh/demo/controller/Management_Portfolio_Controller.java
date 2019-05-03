@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hh.demo.dao.ClientPocDAO;
 import com.hh.demo.dao.ConsultantDAO;
 import com.hh.demo.exception.CustomException;
+import com.hh.demo.model.ClientPOC;
 import com.hh.demo.model.Consultant;
 import com.hh.demo.model.Portfolio;
 import com.hh.demo.model.Project;
@@ -35,6 +37,9 @@ public class Management_Portfolio_Controller {
 
 	@Autowired
 	private ConsultantDAO consultantDAO;
+	
+	@Autowired
+	private ClientPocDAO clientpocDAO;
 
 	/*********************************************************************************************/
 
@@ -122,6 +127,11 @@ public class Management_Portfolio_Controller {
 	@GetMapping("/unassignedConsultants")
 	public List<Consultant> getUnassignedConsultants() {
 		return consultantDAO.getUnassignedConsultants();
+	}
+	
+	@GetMapping("/unassignedClientpocs")
+	public List<ClientPOC> getUnassignedClientpocs() {
+		return clientpocDAO.getUnassignedClientpocs();
 	}
 
 }
